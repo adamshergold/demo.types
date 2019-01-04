@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../etc/common.props" />
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Example-Types-MSBuild-Compile-Namespace>Demo.Types</Example-Types-MSBuild-Compile-Namespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="GitVersionTask" Version="$(Demo-GitVersionTask-Version)">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="FSharp.Core" Version="$(Demo-FSharp-Core-Version)" />
+    <PackageReference Include="example.serialisation" Version="$(Demo-example-serialisation-Version)" />
+    <PackageReference Include="example.types.msbuild" Version="$(Demo-example-types-msbuild-Version)" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include=".generated/Address.fs" />
+  </ItemGroup>
+</Project>

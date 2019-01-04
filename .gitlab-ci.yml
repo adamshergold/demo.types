@@ -1,0 +1,11 @@
+image: microsoft/dotnet:2.2-sdk 
+stages:
+  - build-test
+
+build-test:
+  stage: build-test
+  script:
+    - ./etc/build/gitversion.sh
+    - dotnet build demo.types.sln
+    - dotnet test lib.tests
+

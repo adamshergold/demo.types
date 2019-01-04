@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="../etc/common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="logging.fs" />
+    <Compile Include="tests.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GitVersionTask" Version="$(Demo-GitVersionTask-Version)">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="FSharp.Core" Version="$(Demo-FSharp-Core-Version)" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="$(Demo-Microsoft-Extensions-Logging-Version)" />
+    <PackageReference Include="Serilog" Version="$(Demo-Serilog-Version)" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="$(Demo-Serilog-Extensions-Logging-Version)" />
+    <PackageReference Include="Serilog.Sinks.XUnit" Version="$(Demo-Serilog-Sinks-XUnit-Version)" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(Demo-Microsoft-NET-Test-Sdk-Version)" />
+    <PackageReference Include="xunit" Version="$(Demo-xunit-Version)" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="$(Demo-xunit-runner-visualstudio-Version)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\lib\lib.fsproj" />
+  </ItemGroup>
+
+</Project>

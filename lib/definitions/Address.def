@@ -1,0 +1,5 @@
+type Address
+{
+    Number: int32,
+    Street: string
+}
