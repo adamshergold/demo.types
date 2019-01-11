@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- We externalise some settings (e.g. version numbers) so we can be consistent between projects -->
+  <Import Project="../etc/common.props" />
+  <PropertyGroup>
+    <!-- This is pretty standard -->
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <!-- The type generation has a number of properties that can be set that control the produced code 
+         'Example-Types-MSBuild-Compile-Namespace' - this sets the namespace prefix at the top of each generated file -->
+    <Example-Types-MSBuild-Compile-Namespace>Demo.Types</Example-Types-MSBuild-Compile-Namespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- This project use 'gitflow' versioning so we use this NuGet package to auto-version the library (this is not required)-->
+    <PackageReference Include="GitVersionTask" Version="$(Demo-GitVersionTask-Version)">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <!-- Recommended to use an explicit version of FSharp.Core to avoid 'it worked for me' issues -->
+    <PackageReference Include="FSharp.Core" Version="$(Demo-FSharp-Core-Version)" />
+    <!-- This NuGet package contains the serialisation code -->
+    <PackageReference Include="example.serialisation" Version="$(Demo-example-serialisation-Version)" />
+    <!-- This NuGet package provides built-in code-generation of types -->
+    <PackageReference Include="example.types.msbuild" Version="$(Demo-example-types-msbuild-Version)" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include=".generated/Address.fs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,27 @@
+
+<Project>
+
+    <PropertyGroup>
+
+        <Demo-FSharp-Core-Version>4.5.4</Demo-FSharp-Core-Version>
+
+        <Demo-GitVersionTask-Version>[4.0.1-beta1-51]</Demo-GitVersionTask-Version>
+        
+        <Demo-Microsoft-Extensions-Logging-Version>2.2.0</Demo-Microsoft-Extensions-Logging-Version>
+        
+        <Demo-Serilog-Version>2.7.1</Demo-Serilog-Version>
+        <Demo-Serilog-Extensions-Logging-Version>2.0.2</Demo-Serilog-Extensions-Logging-Version>
+        <Demo-Serilog-Sinks-XUnit-Version>1.0.6</Demo-Serilog-Sinks-XUnit-Version>
+
+
+        <Demo-Microsoft-NET-Test-Sdk-Version>15.9.0</Demo-Microsoft-NET-Test-Sdk-Version>
+        <Demo-xunit-Version>2.4.0</Demo-xunit-Version>
+        <Demo-xunit-runner-visualstudio-Version>2.4.0</Demo-xunit-runner-visualstudio-Version>
+
+        <Demo-example-serialisation-Version>1.1</Demo-example-serialisation-Version>
+        <Demo-example-types-msbuild-Version>1.1</Demo-example-types-msbuild-Version>
+
+    </PropertyGroup>
+    
+</Project>
+
