@@ -23,16 +23,16 @@ type LibShould( oh :ITestOutputHelper ) =
         let serde =
             Serde.Make( SerdeOptions.Default )
             
-        let nSerialisersRegistered =
+        let nTypeSerdesRegistered =
             serde.TryRegisterAssembly typeof<Address>.Assembly 
         
-        logger.LogInformation( "Registered {nSerialisersRegistered} serialisers", nSerialisersRegistered )
+        logger.LogInformation( "Registered {nSerialisersRegistered} type serdes", nTypeSerdesRegistered )
         
         let example =
             Address.Make( 1, "High Street" )
 
         let bytes =
-            example |> Helpers.Serialise serde (Some contentType)
+            example |> Helpers.Serialise serde contentType
             
         if contentType = "json" then
             logger.LogInformation( "{JSON}", bytes |> System.Text.Encoding.UTF8.GetString )
@@ -40,6 +40,6 @@ type LibShould( oh :ITestOutputHelper ) =
             logger.LogInformation( "{Bytes}", bytes )
             
         let example' =
-            bytes |> Helpers.DeserialiseT<_> serde (Some contentType)
+            bytes |> Helpers.DeserialiseT<_> serde contentType
             
         Assert.Equal( example', example )
