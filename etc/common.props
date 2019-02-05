@@ -18,8 +18,8 @@
         <Demo-xunit-Version>2.4.0</Demo-xunit-Version>
         <Demo-xunit-runner-visualstudio-Version>2.4.0</Demo-xunit-runner-visualstudio-Version>
 
-        <Demo-example-serialisation-Version>1.1</Demo-example-serialisation-Version>
-        <Demo-example-types-msbuild-Version>1.1</Demo-example-types-msbuild-Version>
+        <Demo-example-serialisation-Version>1.2</Demo-example-serialisation-Version>
+        <Demo-example-types-msbuild-Version>1.2</Demo-example-types-msbuild-Version>
 
     </PropertyGroup>
     

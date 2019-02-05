@@ -1,5 +1,5 @@
 type Address
 {
-    Number: int32,
-    Street: string
+    Number: Int!
+    Street: String!
 }

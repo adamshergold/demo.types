@@ -23,5 +23,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include=".generated/Address.fs" />
+    <Compile Include=".generated/Person.fs" />
   </ItemGroup>
 </Project>
